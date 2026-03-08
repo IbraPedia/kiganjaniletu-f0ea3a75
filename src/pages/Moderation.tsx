@@ -160,7 +160,7 @@ const Moderation = () => {
     if (!newModUsername.trim()) return;
     setAddingMod(true);
     try {
-      const { data: profile } = await supabase.from('profiles').select('id').eq('username', newModUsername.trim()).maybeSingle();
+      const { data: profile } = await supabase.from('profiles_public').select('id').eq('username', newModUsername.trim()).maybeSingle();
       if (!profile) { toast.error('User not found'); setAddingMod(false); return; }
       const { error } = await supabase.from('user_roles').insert({ user_id: profile.id, role: 'moderator' });
       if (error) {
