@@ -393,8 +393,8 @@ const PostCard = ({ post, onUpdate, expanded = false, autoShowComments = false }
                   isVideo ? (
                     <video
                       src={c.media_url}
-                      controls
-                      className="w-full rounded max-h-48 mt-1 border cursor-pointer"
+                      controls preload="metadata" playsInline
+                      className="w-full rounded max-h-48 mt-1 border cursor-pointer bg-black"
                       onClick={(e) => { e.preventDefault(); setViewerMedia({ url: c.media_url!, isVideo: true }); }}
                     />
                   ) : (

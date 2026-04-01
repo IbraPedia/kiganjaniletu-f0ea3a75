@@ -72,6 +72,7 @@ const PostDetail = () => {
           <p className="text-center text-muted-foreground">Post not found</p>
         )}
       </main>
+      <GuestLoginPrompt />
     </div>
   );
 };
