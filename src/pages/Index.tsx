@@ -141,12 +141,12 @@ const Index = () => {
         </div>
       </main>
 
-      {/* Floating Create Post Button */}
-      {user && (
-        <div className="fixed bottom-6 right-6 z-50">
-          <CreatePostDialog onPostCreated={fetchPosts} />
-        </div>
-      )}
+      {/* Floating Create Button - visible to all */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <CreateContentChooser onPostCreated={fetchPosts} />
+      </div>
+
+      <GuestLoginPrompt />
     </div>
   );
 };

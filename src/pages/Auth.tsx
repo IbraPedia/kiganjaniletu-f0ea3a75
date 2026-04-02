@@ -58,6 +58,19 @@ const Auth = () => {
 
   const ALLOWED_DOMAINS = ['gmail.com', 'icloud.com', 'yahoo.com'];
 
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.origin },
+      });
+      if (error) throw error;
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to sign in with Google');
+    } finally { setLoading(false); }
+  };
+
   const handleSendOtp = async () => {
     if (!email) { toast.error('Please enter your email'); return; }
     const domain = email.split('@')[1]?.toLowerCase();
