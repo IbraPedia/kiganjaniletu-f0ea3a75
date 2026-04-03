@@ -8,16 +8,18 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import Index from "./pages/Index";
-import Auth from "./pages/Auth";
-import PostDetail from "./pages/PostDetail";
-import Profile from "./pages/Profile";
-import Bookmarks from "./pages/Bookmarks";
-import CategoryFeed from "./pages/CategoryFeed";
-import NotFound from "./pages/NotFound";
-import Moderation from "./pages/Moderation";
-import Privacy from "./pages/Privacy";
-import CreateThread from "./pages/CreateThread";
+import { lazy, Suspense } from "react";
+
+const Index = lazy(() => import("./pages/Index"));
+const Auth = lazy(() => import("./pages/Auth"));
+const PostDetail = lazy(() => import("./pages/PostDetail"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Bookmarks = lazy(() => import("./pages/Bookmarks"));
+const CategoryFeed = lazy(() => import("./pages/CategoryFeed"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Moderation = lazy(() => import("./pages/Moderation"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const CreateThread = lazy(() => import("./pages/CreateThread"));
 
 const queryClient = new QueryClient();
 
