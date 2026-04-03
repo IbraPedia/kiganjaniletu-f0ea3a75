@@ -97,7 +97,7 @@ const CreatePostDialog = ({ onPostCreated, defaultCategory, externalOpen, onExte
       } else {
         toast.success('Post published!');
       }
-      setContent(''); setCategory(defaultCategory || '');
+      setPostTitle(''); setContent(''); setCategory(defaultCategory || '');
       setImages([]); previews.forEach(p => URL.revokeObjectURL(p)); setPreviews([]);
       setIsOpen(false);
       onPostCreated();
