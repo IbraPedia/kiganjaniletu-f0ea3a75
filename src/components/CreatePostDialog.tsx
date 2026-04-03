@@ -167,8 +167,7 @@ const CreatePostDialog = ({ onPostCreated, defaultCategory, externalOpen, onExte
           </div>
 
           <p className="text-xs text-muted-foreground">
-            Up to {MAX_IMAGES} photos. Auto-compressed to WebP.
-            {images.length > 0 && ' Posts with media require admin approval.'}
+            Up to {MAX_IMAGES} photos.
           </p>
 
           <Button onClick={handleSubmit} disabled={loading} className="w-full">
